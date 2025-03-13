@@ -10,7 +10,9 @@ export default function Home() {
         {id: 3, title: "third Robot", releaseDate: "2023"},
     ];
 
-    const handleSearch = () => {};
+    const handleSearch = (e) => {
+        e.preventDefault();
+    }
     
     return(
         <div className="home">
@@ -26,9 +28,11 @@ export default function Home() {
             </form>
 
             <div className="movie-grid">
-                {movies.map((movie) => (
-                    <MovieCard movieInfo={movie} key={movie.id}/>
-                ))}
+                {movies.map((movie) => 
+                    movie.title.toLowerCase().startsWith(searchQuery) && (
+                        <MovieCard movieInfo={movie} key={movie.id}/>
+                )
+                )}
             </div>
         </div>
     )
