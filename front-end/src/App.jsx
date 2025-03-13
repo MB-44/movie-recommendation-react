@@ -1,12 +1,12 @@
 import './App.css'
+import Home from './pages/home';
 
 function App() {
-
   return (
     <>
-      <p>Hello world, I'm Menath</p>
+     <Home/>
     </>
-  )
+  );
 }
 
 export default App
